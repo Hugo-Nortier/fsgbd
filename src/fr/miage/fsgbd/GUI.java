@@ -94,8 +94,12 @@ public class GUI extends JFrame implements ActionListener {
             else if (e.getSource() == buttonLoadRecherche) {
 
                 long timestampMS = System.currentTimeMillis();
-                Noeud noeud = bInt.rechercheValeur(Integer.parseInt(txtFileRecherche.getText()));
-                long timestampFinal = System.currentTimeMillis() - timestampMS;
+                boolean isNumeric =  txtFileRecherche.getText().trim().matches("[+-]?\\d*(\\.\\d+)?");
+                Noeud noeud=null;
+                if(isNumeric) {
+                noeud = bInt.rechercheValeur(Integer.parseInt(txtFileRecherche.getText().trim()));
+                }
+                double timestampFinal = System.currentTimeMillis() - timestampMS;
                 String txtres = "Recherche de l'arbre terminée en " + timestampFinal + "ms";
                 if (noeud != null)
                     txtres += "\nIndex trouvé dans le noeud : " + noeud.toString();
@@ -118,14 +122,14 @@ public class GUI extends JFrame implements ActionListener {
                         // ajoute la ligne au buffer
                         String[] splt = line.split(",");
                         if (splt.length > 1) {
-                            if (splt[1].equals(txtFileRecherche.getText())) {
+                            if (splt[1].equals(txtFileRecherche.getText().trim())) {
                                 trouve = true;
                                 nbligne = splt[0];
                             }
                         }
                     }
 
-                    long timestampFinal = System.currentTimeMillis() - timestampMS;
+                    double timestampFinal = System.currentTimeMillis() - timestampMS;
                     String txtres = "Recherche de l'arbre terminée en " + timestampFinal + "ms";
                     if (trouve)
                         txtres += "\nIndex trouvé à la ligne: " + nbligne;
