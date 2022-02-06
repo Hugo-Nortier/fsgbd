@@ -1,16 +1,16 @@
 
 # PROJET FSGBD
 
-Dans le cadre d'un projet universitaire, nous devons effectuer des recherches sur un SGBD choisi et implémenter un algorithme d'indéxation de recherche pour pouvoir comparer la recherche séquentielle et la recherche à l'aide d'un arbre B+ simulant le fonctionnement des index dans une base de données.
+Le travail ici proposé fait suite aux enseignements reçus lors du cours "Fonctionnement des SGBD". Ce travail est structuré en deux parties.   
+L'une concerne l’évaluation d’un SGBD relationnel du marché, dans notre cas MySQL et l'autre concerne l'implémentation d'un algorithme d'indexation et de recherche comparant la recherche séquentielle et la recherche à l'aide d'un arbre B+.
 
 ## PARTIE I - EVALUTATION D'UN SGBD RELATIONNEL DU MARCHE
 
-Le SGBD choisi est MySQL. La première partie consistait à répondre aux différentes parties demandées.
-Les parties sont :
+Le SGBD évalué est MySQL. Les points suivants ont été analysés:
   
         * Identification du SGBD
         * Architecture fonctionnelles du SGBD
-        * Le dictionnaire de données du moteur
+        * Dictionnaire de données du moteur
         * Organisation physique du SGBD
         * Organisation logique des données
         * Gestion de la concurrence d’accès
